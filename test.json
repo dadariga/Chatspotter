@@ -1,0 +1,19 @@
+{ "answers" :[
+    {"intent":"trinken", "answer":"Trinken kann man auch Wasser."},
+    {"intent":"schlafen", "answer":"Schlafen wirkt wie eine Droge ist aber gesund."},
+    {"intent":"saufen", "answer":"Wasser saufen ist gesund."},
+    {"intent": "yes","answer":"Nice. Then we will have fun together"},
+    {"intent": "start","answer":"Once upon a time it was a kid and his father walking through a forest to collect mushrooms. As they getting to the center of the forest, they cant recognize where they came from and as the daylight slightly fades away, they had to take a way before the night comes. You will help them. Please go forward."},
+    {"intent": "Left or Right?","answer":"Write 'left way' or 'right way' in the chat. Afterwards go with the orders in the middle in your prefered direction."},
+    {"intent": "left way","answer":"On the left you see a dark and muddy road, but because of the leafless trees you can see good."},
+    {"intent": "right way","answer":"On the right you see a dry and comfortable way, but because of the leaves you cant see that well."},
+    {"intent": "forward or upward?","answer":"Write 'forward way' or 'upward way' in the chat."},
+    {"intent": "forward way","answer":"Slowly you are getting hungry and you smell food in this direction, but where food is, there are others to eat it."},
+    {"intent": "upward way","answer":"You are getting hungry and this way is the safe and comfortable way, but the sight is getting worse"},
+    {"intent": "was","answer":"You are getting hungry and this way is the safe and comfortable way, but the sight is getting worse"},
+    {"intent": "entstanden","answer":"You are getting hungry and this way is the safe and comfortable way, but the sight is getting worse"}
+
+
+
+  ]
+}
