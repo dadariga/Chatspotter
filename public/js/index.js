@@ -1,3 +1,9 @@
+/**
+ * Einfache Funktion die einen Klick Event an den Canvas bindet
+ * Methode nutzt intern ein Image Objekt
+ * @author Lukas Stephan Rieger
+ * @version v0.1
+ */ 
 
 $("document").ready(function(){
 var socket = new WebSocket('ws://127.0.0.1:8181/', 'chat');
@@ -32,11 +38,15 @@ var socket = new WebSocket('ws://127.0.0.1:8181/', 'chat');
                var length=msg2.length;
                
 
-               /* Hier sind die einzelnen Schritte, wie man mit CSS durch mein Labyrinth läuft. Dabei habe ich lediglich
-               CSS Veränderungen gemacht wie den Pfeil oder die divs mit der id="blackbox". Und bei einer Kreuzung wie im ersten Schritt wird eine Nachricht an den socket 
-               gesendet, und das JSON gibt die passende Antwort zurück. 
+               /**  Hier sind die einzelnen Schritte, wie man mit CSS durch mein Labyrinth läuft. Dabei habe ich lediglich
+               * CSS Veränderungen gemacht wie den Pfeil oder die divs mit der id="blackbox". Und bei einer Kreuzung wie im ersten Schritt wird eine Nachricht an den socket 
+               * gesendet, und das JSON gibt die passende Antwort zurück.
+               * @return gibt für jeden Schritt das Increment zurück
+               * @param includes überprüft Nachricht auf Vorkommen eines bestimmten Buchstaben
+               * @param length überprüft Anzahl der Buchstaben der Nachricht
+               * @param increment überprüft Counter
                */
-
+               
                 if(msg.includes('f')&& length == 1&& increment == 0){
                     $("#point").css("top","87%");
                     $("#blackbox1").css("opacity","0%");
@@ -46,6 +56,9 @@ var socket = new WebSocket('ws://127.0.0.1:8181/', 'chat');
                     socket.send('{"type": "msg", "msg": "' + msg3 +'"}');
                     msg1.value="";
                     return increment = 1;
+                /**
+                 * @param includes überprüft Nachricht auf das Vorkommen von drei Buchstaben
+                 */
                 }else if(msg.includes('t')&& msg.includes('r')&& msg.includes('f')&& length == 3&& increment == 1){
                     $("#point").css("left","56%");
                     $("#point").css("transform","rotate(90deg)");
@@ -161,8 +174,10 @@ var socket = new WebSocket('ws://127.0.0.1:8181/', 'chat');
                     msg1.value="";
                     return increment = 47;
 
-/* Hier ist ein Beispiel wenn man gegen eine Wand läuft bzw. wenn es nicht weiter vorwärts geht, 
-wird eine Fehlermeldung ausgespuckt. Und das JSON gibt wieder die entsprechende Antwort zurück */
+/**  Hier ist ein Beispiel wenn man gegen eine Wand läuft bzw. wenn es nicht weiter vorwärts geht, 
+wird eine Fehlermeldung ausgespuckt. Und das JSON gibt wieder die entsprechende Antwort zurück 
+* @return 
+*/
                 }else if(msg.includes('f')&& length == 1&& increment == 47){
                     $("#point").css("top","40%");
                     $("#blackbox71").css("opacity","0%");
@@ -892,8 +907,9 @@ wird eine Fehlermeldung ausgespuckt. Und das JSON gibt wieder die entsprechende 
                 
                 
                 
-                /* hier sieht man dass durch includes und length gesichert ist, dass man nicht igendein Wort eingeben kann, 
-                dass zufällig diese Buchstaben enthält und dann durch das Labyrinth navigiert wird.*/
+                /**  hier sieht man dass durch includes und length gesichert ist, dass man nicht igendein Wort eingeben kann, 
+                *dass zufällig diese Buchstaben enthält und dann durch das Labyrinth navigiert wird.
+                */
                 else if(msg.includes('t')&& msg.includes('r')&& msg.includes('f')&& length == 3&& increment == 25){
                     $("#point").css("top","-1%");
                     $("#point").css("transform","rotate(0deg)");

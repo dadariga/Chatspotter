@@ -1,3 +1,9 @@
+/*
+ * Einfache Funktion die einen Klick Event an den Canvas bindet
+ * Methode nutzt intern ein Image Objekt
+ * @author Lukas Stephan Rieger
+ * @version v0.1
+ */ 
 body{
   background: linear-gradient(90deg, #B77A43 0%,  #2b6200 100%);
     width: 100%;
